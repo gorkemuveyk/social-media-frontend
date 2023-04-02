@@ -10,7 +10,7 @@
 /* DEFAULT CSS */
 
 ::selection {
-    background-color: var(--secondary-color);
+    background-color: rgba(255, 140, 0, 0.833);
     color: var(--text-color);
 }
 
@@ -25,6 +25,9 @@
 body {
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    letter-spacing: 1.5px;
 }
 
 a {
@@ -37,6 +40,7 @@ li {
     list-style: none;
 }
 
+
 /* NAVBAR */
 
 .header {
@@ -47,11 +51,13 @@ li {
     width: 100%;
     height: 70px;
     background-color: var(--primary-color);
+    position: relative;
 }
 
 .navbar {
     width: 100%;
     height: inherit;
+    position: relative;
 }
 
 .nav-items {
@@ -72,6 +78,7 @@ li {
     border-radius: 50%;
     transition: 300ms all ease;
     background-color: var(--secondary-color);
+    position: relative;
 }
 
 .nav-item a {
@@ -86,6 +93,168 @@ li {
 .nav-item:hover {
     transform-origin: center;
     transform: rotate(20deg);
+}
+
+.nav-item .badge {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: red;
+    padding: .1em;
+    border-radius: 50%;
+    font-size: 10px;
+    user-select: none;
+}
+
+/* FRIENDS AREA */
+
+.friends-area {
+    background-color: var(--primary-color);
+    width: 400px;
+    height: auto;
+    position: absolute;
+    left: calc(50% - 200px);
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: .4em .3em;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.friends-area .friend {
+    left: calc(50% - 45%);
+    width: 90%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--secondary-color);
+    margin: .4em 0px;
+    padding: .4em;
+    border-radius: 10px;
+}
+
+.friends-area .friend img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.friends-area .friend .controls {
+    display: flex;
+}
+
+.friends-area .friend .controls i {
+    margin: 0px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    font-size: 1.6em;
+    cursor: pointer;
+}
+
+.uil-user-check {
+    background-color: green;
+}
+
+.uil-user-times {
+    background-color: red;
+}
+
+
+/* NOTIFICATIONS AREA */
+
+.notifications-area {
+    background-color: var(--primary-color);
+    width: 400px;
+    height: auto;
+    position: absolute;
+    left: calc(50% - 200px);
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: .4em .3em;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.notification {
+    display: flex;
+    width: 90%;
+    height: 60px;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+    background-color: var(--secondary-color);
+    margin: .4em 0px;
+    padding: .4em;
+    border-radius: 10px;
+}
+
+.notification img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 1.2em;
+    margin-left: 1em;
+}
+
+.notification .time {
+    position: absolute;
+    right: 5px;
+    bottom: 2px;
+    font-size: 9px;
+}
+
+/* MESSAGE AREA */
+
+.message-area {
+    background-color: var(--primary-color);
+    width: 400px;
+    height: auto;
+    position: absolute;
+    left: calc(50% - 200px);
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: .4em .3em;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.message {
+    display: flex;
+    width: 90%;
+    height: 60px;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+    background-color: var(--secondary-color);
+    margin: .4em 0px;
+    padding: .4em;
+    border-radius: 10px;
+}
+
+.message img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 1.2em;
+    margin-left: 1em;
+}
+
+.message .time {
+    position: absolute;
+    right: 5px;
+    bottom: 2px;
+    font-size: 9px;
 }
 
 /* SEARCH BAR */
@@ -139,7 +308,7 @@ input[type="search"]::-webkit-search-cancel-button {
 /* USER PROFILE */
 
 .user-profile {
-    width: 250px;
+    width: 300px;
     height: 70px;
     display: flex;
     justify-content: space-between;
@@ -153,9 +322,21 @@ input[type="search"]::-webkit-search-cancel-button {
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    background-color: red;
 }
 
+.user-profile .circle {
+    z-index: 99;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border-top: 2px solid red;
+    border-bottom: 2px solid blue;
+    border-left: 2px solid yellow;
+    border-right: 2px solid fuchsia;
+    position: absolute;
+    right: -5px;
+    animation: profile-circle-anim 10s infinite linear;
+}
 
 .profile-info-btn {
     background-color: rgba(110, 110, 110, 0.768);
@@ -172,7 +353,6 @@ input[type="search"]::-webkit-search-cancel-button {
     cursor: pointer;
 }
 
-
 .user-profile:hover .profile-info-btn {
     display: flex;
 }
@@ -180,4 +360,57 @@ input[type="search"]::-webkit-search-cancel-button {
 .profile-info-btn i {
     color: #fff;
     font-size: 2em;
+}
+
+.user-profile:hover+.profile-detail {
+    display: flex;
+}
+
+.profile-detail:hover {
+    display: flex;
+}
+
+
+@keyframes profile-circle-anim {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.profile-detail {
+    position: absolute;
+    top: 100%;
+    right: 1%;
+    background-color: var(--primary-color);
+    width: 350px;
+    height: 400px;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: .4em;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.profile-detail .profile-details-row img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.profile-details-row {
+    margin: .1em;
+    padding: 1em;
+    background-color: var(--secondary-color);
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10px;
 }
