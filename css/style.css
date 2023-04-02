@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
+/* VARIABLES */
+:root {
+    --primary-color: #3A1078;
+    --secondary-color: #4E31AA;
+    --text-color: #F7F1E5;
+}
+
+/* DEFAULT CSS */
+
+::selection {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
 *,
 *::after,
 *::before {
@@ -11,4 +25,159 @@
 body {
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    border-bottom: 1px solid orange;
+}
+
+li {
+    list-style: none;
+}
+
+/* NAVBAR */
+
+.header {
+    display: flex;
+    justify-content: space-between !important;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+    height: 70px;
+    background-color: var(--primary-color);
+}
+
+.navbar {
+    width: 100%;
+    height: inherit;
+}
+
+.nav-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+}
+
+.nav-item {
+    margin: 0px .1em;
+    padding: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: 300ms all ease;
+    background-color: var(--secondary-color);
+}
+
+.nav-item a {
+    border: none;
+}
+
+.nav-item i {
+    font-size: 2em;
+    color: var(--text-color);
+}
+
+.nav-item:hover {
+    transform-origin: center;
+    transform: rotate(20deg);
+}
+
+/* SEARCH BAR */
+
+.search-bar {
+    position: relative;
+}
+
+.search-bar form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-input {
+    padding: .4em 1em;
+    width: 250px;
+    height: 35px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 0;
+    outline: 0;
+}
+
+.search-btn {
+    padding: .4em;
+    width: 50px;
+    height: 35px;
+    position: absolute;
+    right: -50px;
+    border: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    opacity: .9;
+}
+
+.search-btn i {
+    font-size: 1.5em;
+}
+
+/* input[type="search"] Clear button on the right side of the element */
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* USER PROFILE */
+
+.user-profile {
+    width: 250px;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 50px;
+    position: relative;
+    color: var(--text-color);
+}
+
+.user-profile img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+
+.profile-info-btn {
+    background-color: rgba(110, 110, 110, 0.768);
+    padding: .1em .2em;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    z-index: 99;
+    cursor: pointer;
+}
+
+
+.user-profile:hover .profile-info-btn {
+    display: flex;
+}
+
+.profile-info-btn i {
+    color: #fff;
+    font-size: 2em;
 }
